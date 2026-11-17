@@ -1,0 +1,48 @@
+# Changelog
+
+## 2.9.1 — 2026-11-16
+- Pós-publicação configurável por canal para uploads públicos imediatos, com adaptador para um publicador Metricool existente. Entrega registrada separadamente, vídeo preservado em falhas e comando `distribuir` para retomar sem repetir o upload. Uploads privados, não listados, agendados e dry-run não distribuem. Resultado ambíguo exige conferir o recibo antes de retomar.
+
+## 2.8.1 — 2026-11-15
+- Tipo, provedor, modelo e esforço independentes para metadados; imagem continua Codex assinatura. Configuração comentada na pasta do usuário, APIs desativadas e sem fallback pago.
+
+## 2.7.1 — 2026-11-11
+- Trava por arquivo: antes de gerar texto ou subir, o `publicar` calcula o sha256 do vídeo; se o mesmo arquivo já foi publicado NESTE canal (em qualquer data, com qualquer título), não sobe e devolve o `URL:` do que existe. `--repetir` força; vídeo apagado com `remover` não conta. O histórico passa a guardar `sha256`; registros antigos são comparados pelo arquivo de origem. Motivo: futviral e contaviral subiram o vídeo da véspera de novo por 7 dias (28/10–07/11), e o repetido teve ~98% menos views.
+
+## 2.6.1 — 2026-11-07
+- Canal com `"aceita_so_de": ["~/pasta/"]` no config só publica vídeos dessas pastas; o resto sai com `RECUSADO` (código 3) e o motivo de `aceita_so_de_motivo`. `--avulso-ok` libera um vídeo. Primeiro uso: lives10 (eventosextremos) só com as séries automáticas.
+
+## 2.5.1 — 2026-11-07
+- Trava de duplicado: se o canal já recebeu vídeo com o mesmo título nas últimas 48 h, `publicar` não sobe de novo e devolve o `URL:` do que já existe (mesma saída, quem chama segue igual). `--repetir` força. Motivo: o eventosextremos publicou o mesmo vídeo 2× em 05, 06 e 07/11.
+
+## 2.4.1 — 2026-10-23
+- Vídeo vertical com mais de 3 min não é Short: agora recebe thumb (antes todo vídeo em pé saía sem thumb).
+
+## 2.4.0 — 2026-10-11
+- `yt-pubx remover <id|URL> --canal X --sim`: apaga um vídeo do canal (videos.delete). Sem `--sim` só mostra qual vídeo seria apagado; a remoção fica registrada no histórico.
+
+## 2.3.0 — 2026-10-10
+- `yt-pubx auth` aceita client **Aplicativo da Web**: usa o endereço local cadastrado no JSON, ou `--redirect`.
+- Navegador em outra máquina: cole no terminal a URL final (com `code=`) e a autorização termina.
+- O link de autorização fica também em `~/.config/yt-pubx/auth-<canal>.txt` (copiar sem quebra de linha); espera 30 min.
+- Novo guia leigo [docs/autorizar-canal.md](docs/autorizar-canal.md) com os erros reais do Google e a saída de cada um.
+
+## 2.2.0 — 2026-10-08
+- `--sem-thumb`: não gera nem envia thumb. Liga sozinho em vídeo vertical (Short), que não usa thumb.
+- Corrige erro depois do envio quando não havia thumb (`ok` indefinido ao gravar o histórico).
+
+## 2.1.0 — 2026-10-07
+- `yt-pubx atualizar <id|URL>`: edita título, descrição ou tags de um vídeo já publicado.
+
+## 2.0.0 — 2026-10-07
+- Ferramenta independente: config em `~/.config/yt-pubx/config.json`, canais ilimitados.
+- `yt-pubx init` e `yt-pubx auth` (OAuth "App para computador" com PKCE, escopos de upload, gerência e legendas).
+- `credenciais_cmd` por canal para quem já guarda as credenciais em outro lugar.
+- Compositor de thumb próprio (frase, marca e cores por canal).
+- Baixador configurável (yt-dlp por padrão) e `imagem_reserva` opcional.
+
+## 1.1.1
+- `--plano` publica exatamente o que o `--dry-run` gerou; aviso claro para legenda sem escopo.
+
+## 1.0.0
+- Publicação direta com texto e thumb pelo Codex.
