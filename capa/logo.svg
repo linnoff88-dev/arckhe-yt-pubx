@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="arche-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A9FE5"/>
+      <stop offset="100%" stop-color="#9B6FBF"/>
+    </linearGradient>
+  </defs>
+  <!-- Seta A estilizada -->
+  <path d="M200 10 L260 80 L210 70 L240 100 L140 100 L170 70 L120 80 Z" 
+        fill="url(#arche-grad)" opacity="0.9"/>
+  <!-- Texto ARCKHE AI -->
+  <text x="200" y="110" text-anchor="middle" 
+        font-family="'Segoe UI', Arial, sans-serif" 
+        font-size="32" font-weight="700" 
+        fill="url(#arche-grad)" letter-spacing="2">ARKHÉ AI</text>
+</svg>
