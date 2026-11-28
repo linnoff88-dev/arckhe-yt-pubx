@@ -47,7 +47,7 @@ yt-pubx publicar aula.mp4 --contexto "Aula 3 do curso X. Página: https://..." -
 git clone https://github.com/linnoff88-dev/yt-pubx.git
 cd yt-pubx
 ln -s "$PWD/yt-pubx" ~/.local/bin/yt-pubx   # opcional: chamar de qualquer pasta
-yt-pubx init                                 # cria ~/.config/yt-pubx/config.json
+yt-pubx init                                 # cria ~/.config/arckhe-yt-pubx/config.json
 ```
 
 ## 3. Liberar o YouTube no Google Cloud (uma vez)
@@ -80,7 +80,7 @@ yt-pubx init                                 # cria ~/.config/yt-pubx/config.jso
 
 ## 4. Configurar o canal
 
-Edite `~/.config/yt-pubx/config.json`:
+Edite `~/.config/arckhe-yt-pubx/config.json`:
 
 ```json
 {
@@ -129,9 +129,9 @@ yt-pubx canais
 
 Navegador em outra máquina (servidor, acesso remoto)? Depois do **Permitir** a página dá erro de
 conexão: copie a URL da barra de endereço, cole no terminal do `yt-pubx auth` e tecle Enter.
-O link de autorização também fica em `~/.config/yt-pubx/auth-<canal>.txt`, para copiar sem quebra.
+O link de autorização também fica em `~/.config/arckhe-yt-pubx/auth-<canal>.txt`, para copiar sem quebra.
 
-O token fica em `~/.config/yt-pubx/tokens/principal.json` (permissão 600). Para mais canais,
+O token fica em `~/.config/arckhe-yt-pubx/tokens/principal.json` (permissão 600). Para mais canais,
 repita: um bloco em `canais` + um `yt-pubx auth <nome>`. O mesmo `client_secret` serve para
 todos os canais; cada `auth` é feito logado na conta dona daquele canal (ou escolhendo o canal
 de marca na tela do Google).
@@ -147,7 +147,7 @@ de marca na tela do Google).
 yt-pubx publicar video.mp4 --contexto "Do que o vídeo trata + links oficiais" --dry-run
 
 # gostou? publique exatamente o que viu (sem gerar outra arte)
-yt-pubx publicar video.mp4 --plano ~/.local/share/yt-pubx/trabalhos/<pasta>/plano.json
+yt-pubx publicar video.mp4 --plano ~/.local/share/arckhe-yt-pubx/trabalhos/<pasta>/plano.json
 
 # trocar só a frase da thumb
 yt-pubx publicar video.mp4 --plano .../plano.json --frase-thumb "Do zero ao ar"
@@ -174,8 +174,8 @@ yt-pubx publicar video.mp4 --title "..." --description "..." --tags "a,b,c" --th
 Vídeo vertical curto (até 3 min) vira **Short** automaticamente; ponha `#Shorts` no título se quiser
 deixar explícito.
 
-**Saídas:** `~/.local/share/yt-pubx/trabalhos/<data>-<nome>/` (plano.json, thumb.jpg, thumb_arte.png)
-e `~/.local/share/yt-pubx/historico.jsonl` (uma linha por publicação).
+**Saídas:** `~/.local/share/arckhe-yt-pubx/trabalhos/<data>-<nome>/` (plano.json, thumb.jpg, thumb_arte.png)
+e `~/.local/share/arckhe-yt-pubx/historico.jsonl` (uma linha por publicação).
 
 **Editar um vídeo já publicado** (título, descrição ou tags; o resto fica como está):
 
@@ -200,7 +200,7 @@ uma troca de frase na thumb e três publicações com thumb em menos de 5 minuto
 | Mensagem | Causa / saída |
 |---|---|
 | `redirect_uri_mismatch` | client "Aplicativo da Web" sem o endereço local cadastrado → [docs/autorizar-canal.md](docs/autorizar-canal.md) |
-| `single value: access_type` | link copiado quebrado do terminal → abra pelo `~/.config/yt-pubx/auth-<canal>.txt` |
+| `single value: access_type` | link copiado quebrado do terminal → abra pelo `~/.config/arckhe-yt-pubx/auth-<canal>.txt` |
 | erro de conexão em `localhost` depois do Permitir | navegador em outra máquina → cole a URL da barra no terminal do `auth` |
 | `token OAuth recusado` | token expirado (app em modo Teste: 7 dias) → `yt-pubx auth <canal>` |
 | `thumb não aplicada … verify` | canal sem verificação por telefone |
@@ -215,7 +215,7 @@ MIT. Projeto educacional independente; não é produto do Google, do YouTube nem
 
 ## Modelo e esforço por etapa
 
-Use Python 3.11+ com `pip install -r requirements.txt` (requests, Pillow e PyYAML). Configuração comentada em `~/.config/yt-pubx/ia.yaml`, exemplo em `ia.exemplo.yaml`; comandos em [IA.md](IA.md). Metadados configuráveis, imagem Codex pela assinatura, tradução no ARCKHÉ-traduz.
+Use Python 3.11+ com `pip install -r requirements.txt` (requests, Pillow e PyYAML). Configuração comentada em `~/.config/arckhe-yt-pubx/ia.yaml`, exemplo em `ia.exemplo.yaml`; comandos em [IA.md](IA.md). Metadados configuráveis, imagem Codex pela assinatura, tradução no ARCKHÉ-traduz.
 
 ## Distribuição após upload
 

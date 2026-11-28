@@ -47,7 +47,7 @@ yt-pubx publicar aula.mp4 --contexto "Clase 3 del curso X. Página: https://..."
 git clone https://github.com/linnoff88-dev/yt-pubx.git
 cd yt-pubx
 ln -s "$PWD/yt-pubx" ~/.local/bin/yt-pubx   # opcional: llamarlo desde cualquier carpeta
-yt-pubx init                                 # crea ~/.config/yt-pubx/config.json
+yt-pubx init                                 # crea ~/.config/arckhe-yt-pubx/config.json
 ```
 
 ## 3. Habilitar YouTube en Google Cloud (una vez)
@@ -79,7 +79,7 @@ yt-pubx init                                 # crea ~/.config/yt-pubx/config.jso
 
 ## 4. Configurar el canal
 
-Edita `~/.config/yt-pubx/config.json`:
+Edita `~/.config/arckhe-yt-pubx/config.json`:
 
 ```json
 {
@@ -128,9 +128,9 @@ yt-pubx canais
 
 ¿Navegador en otra máquina (servidor, escritorio remoto)? Después de **Permitir** la página da error de conexión:
 copia la URL de la barra de direcciones, pégala en la terminal del `yt-pubx auth` y presiona Enter.
-El enlace de autorización también queda en `~/.config/yt-pubx/auth-<canal>.txt`, para copiarlo sin cortes.
+El enlace de autorización también queda en `~/.config/arckhe-yt-pubx/auth-<canal>.txt`, para copiarlo sin cortes.
 
-El token queda en `~/.config/yt-pubx/tokens/principal.json` (permiso 600). Para más canales,
+El token queda en `~/.config/arckhe-yt-pubx/tokens/principal.json` (permiso 600). Para más canales,
 repite: un bloque en `canais` + un `yt-pubx auth <nombre>`. El mismo `client_secret` sirve para
 todos los canales; cada `auth` se hace con la sesión de la cuenta dueña de ese canal (o eligiendo el canal
 de marca en la pantalla de Google).
@@ -146,7 +146,7 @@ de marca en la pantalla de Google).
 yt-pubx publicar video.mp4 --contexto "De qué trata el video + enlaces oficiales" --dry-run
 
 # ¿te gustó? publica exactamente lo que viste (sin generar otro arte)
-yt-pubx publicar video.mp4 --plano ~/.local/share/yt-pubx/trabalhos/<carpeta>/plano.json
+yt-pubx publicar video.mp4 --plano ~/.local/share/arckhe-yt-pubx/trabalhos/<carpeta>/plano.json
 
 # cambiar solo la frase de la miniatura
 yt-pubx publicar video.mp4 --plano .../plano.json --frase-thumb "De cero al aire"
@@ -173,8 +173,8 @@ yt-pubx publicar video.mp4 --title "..." --description "..." --tags "a,b,c" --th
 Un video vertical corto (hasta 3 min) se convierte en **Short** automáticamente; pon `#Shorts` en el título si quieres
 dejarlo explícito.
 
-**Salidas:** `~/.local/share/yt-pubx/trabalhos/<fecha>-<nombre>/` (plano.json, thumb.jpg, thumb_arte.png)
-y `~/.local/share/yt-pubx/historico.jsonl` (una línea por publicación).
+**Salidas:** `~/.local/share/arckhe-yt-pubx/trabalhos/<fecha>-<nombre>/` (plano.json, thumb.jpg, thumb_arte.png)
+y `~/.local/share/arckhe-yt-pubx/historico.jsonl` (una línea por publicación).
 
 **Editar un video ya publicado** (título, descripción o etiquetas; lo demás queda igual):
 
@@ -199,7 +199,7 @@ un cambio de frase en la miniatura y tres publicaciones con miniatura en menos d
 | Mensaje | Causa / solución |
 |---|---|
 | `redirect_uri_mismatch` | cliente "Aplicación web" sin la dirección local registrada → [docs/autorizar-canal.es.md](docs/autorizar-canal.es.md) |
-| `single value: access_type` | enlace copiado cortado desde la terminal → ábrelo desde `~/.config/yt-pubx/auth-<canal>.txt` |
+| `single value: access_type` | enlace copiado cortado desde la terminal → ábrelo desde `~/.config/arckhe-yt-pubx/auth-<canal>.txt` |
 | error de conexión en `localhost` después de Permitir | navegador en otra máquina → pega la URL de la barra en la terminal del `auth` |
 | `token OAuth recusado` | token expirado (app en modo Prueba: 7 días) → `yt-pubx auth <canal>` |
 | `thumb não aplicada … verify` | canal sin verificación por teléfono |

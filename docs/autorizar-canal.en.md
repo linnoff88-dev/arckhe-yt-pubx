@@ -77,7 +77,7 @@ That's it: yt-pubx finishes on its own and shows "Channel ... authorized".
 | What appears | What it means | What to do |
 |---|---|---|
 | `Error 400: redirect_uri_mismatch` | the client is a Web client and the redirect address isn't registered | see "If your client is a Web application" above |
-| `OAuth 2 parameters can only have a single value: access_type` | the link was copied **incorrectly** from the terminal (parts repeated or missing) | open the link from the `~/.config/yt-pubx/auth-<canal>.txt` file, or Ctrl-click it in the terminal |
+| `OAuth 2 parameters can only have a single value: access_type` | the link was copied **incorrectly** from the terminal (parts repeated or missing) | open the link from the `~/.config/arckhe-yt-pubx/auth-<canal>.txt` file, or Ctrl-click it in the terminal |
 | `Access blocked: ... has not completed the Google verification process` | the account isn't on the test users list | add the email address under Audience → Test users |
 | "Choose an account" screen without the right account | the browser isn't signed in to the account that owns the channel | click **Use another account** and sign in with it |
 | `ERR_CONNECTION_REFUSED` / "This site can’t be reached" after clicking Allow | the browser is on another computer | copy the URL from the address bar and paste it into the terminal (see above) |

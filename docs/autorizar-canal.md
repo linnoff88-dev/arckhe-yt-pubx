@@ -77,7 +77,7 @@ Pronto: o yt-pubx termina sozinho e mostra "Canal ... autorizado".
 | O que aparece | O que quer dizer | O que fazer |
 |---|---|---|
 | `Error 400: redirect_uri_mismatch` | o client é Web e o endereço de retorno não está cadastrado | seção "Se o seu client é Aplicativo da Web" acima |
-| `OAuth 2 parameters can only have a single value: access_type` | o link foi copiado **quebrado** do terminal (pedaços repetidos ou faltando) | abra o link pelo arquivo `~/.config/yt-pubx/auth-<canal>.txt`, ou com ctrl+clique no terminal |
+| `OAuth 2 parameters can only have a single value: access_type` | o link foi copiado **quebrado** do terminal (pedaços repetidos ou faltando) | abra o link pelo arquivo `~/.config/arckhe-yt-pubx/auth-<canal>.txt`, ou com ctrl+clique no terminal |
 | `Access blocked: ... has not completed the Google verification process` | a conta não está na lista de usuários de teste | adicione o e-mail em Público-alvo → Usuários de teste |
 | Tela "Choose an account" sem a conta certa | o navegador não está logado na conta dona do canal | clique em **Use another account** e entre com ela |
 | `ERR_CONNECTION_REFUSED` / "Não é possível acessar esse site" depois do Permitir | navegador em outra máquina | copie a URL da barra e cole no terminal (seção acima) |

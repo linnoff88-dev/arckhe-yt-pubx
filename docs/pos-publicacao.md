@@ -5,7 +5,7 @@ Cada canal pode definir `pos_publicar` no config local:
 ```json
 {
   "pos_publicar": {
-    "comando": ["python3", "/caminho/yt-pubx/hooks/metricool.py"],
+    "comando": ["python3", "/caminho/arckhe-yt-pubx/hooks/metricool.py"],
     "ambiente": {
       "METRICOOL_PUBLICADOR": "/caminho/publicador/publicar.sh",
       "METRICOOL_MARCA": "minha-marca",
@@ -19,7 +19,7 @@ Cada canal pode definir `pos_publicar` no config local:
 
 O comando recebe o caminho de um evento JSON como último argumento. Só roda após o histórico do upload público imediato ser salvo. Não roda em dry-run, uploads privados, não listados ou agendados; não monitora quando um vídeo agendado fica público. Não reenvia o histórico anterior. O adaptador chama um publicador previamente instalado e configurado, mantendo suas validações, recibos e intervalo entre posts.
 
-O estado fica em `~/.local/share/yt-pubx/pos-publicacao/<canal>-<video_id>/`: evento, log e estado. Em erro, a cópia do vídeo permanece. Para retomar uma entrega `pendente`, sem novo upload:
+O estado fica em `~/.local/share/arckhe-yt-pubx/pos-publicacao/<canal>-<video_id>/`: evento, log e estado. Em erro, a cópia do vídeo permanece. Para retomar uma entrega `pendente`, sem novo upload:
 
 ```sh
 yt-pubx distribuir VIDEO_ID --canal CANAL

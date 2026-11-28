@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="icon" href="/capa/favicon.ico" type="image/x-icon">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yt-pubx — publica cualquier video en YouTube con un comando</title>
@@ -195,7 +196,7 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instala y crea la configuración</h3>
-    <p>Clona el repositorio, deja el comando en el PATH y genera el archivo de ejemplo en <code>~/.config/yt-pubx/config.json</code>.</p>
+    <p>Clona el repositorio, deja el comando en el PATH y genera el archivo de ejemplo en <code>~/.config/arckhe-yt-pubx/config.json</code>.</p>
 <pre><span class="k">git clone</span> <span class="s">https://github.com/linnoff88-dev/yt-pubx.git</span>
 <span class="k">cd</span> yt-pubx && <span class="k">ln -s</span> "$PWD/yt-pubx" ~/.local/bin/yt-pubx
 <span class="k">yt-pubx init</span></pre>
@@ -205,7 +206,7 @@
     <h3>Habilita YouTube en Google Cloud</h3>
     <p>En <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">console.cloud.google.com</a>: crea un proyecto; en <b>APIs y servicios → Biblioteca</b> habilita la <b>YouTube Data API v3</b>; en la <b>Pantalla de consentimiento de OAuth</b> elige "Externo" y agrega el correo de la cuenta dueña del canal como usuario de prueba (<b>Usuarios de prueba</b>); en <b>Credenciales → Crear credenciales → ID de cliente de OAuth</b> elige <b>App de escritorio</b> y descarga el JSON.</p>
 <pre><span class="c"># guarda el JSON fuera de cualquier repositorio</span>
-<span class="k">mv</span> ~/Downloads/client_secret_*.json ~/.config/yt-pubx/</pre>
+<span class="k">mv</span> ~/Downloads/client_secret_*.json ~/.config/arckhe-yt-pubx/</pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
@@ -222,10 +223,10 @@
 
   <div class="step"><div class="b">4</div><div>
     <h3>Autoriza el canal (una vez)</h3>
-    <p>Abre el navegador; entra con la cuenta dueña del canal y acepta. El token queda en <code>~/.config/yt-pubx/tokens/</code> con permiso 600. Para otro canal, crea otro bloque y repite con su nombre.</p>
-<pre><span class="k">yt-pubx auth</span> principal --client-secret ~/.config/yt-pubx/client_secret_XXXX.json
+    <p>Abre el navegador; entra con la cuenta dueña del canal y acepta. El token queda en <code>~/.config/arckhe-yt-pubx/tokens/</code> con permiso 600. Para otro canal, crea otro bloque y repite con su nombre.</p>
+<pre><span class="k">yt-pubx auth</span> principal --client-secret ~/.config/arckhe-yt-pubx/client_secret_XXXX.json
 <span class="k">yt-pubx canais</span>   <span class="c"># * principal  Mi Canal  ...  ok</span></pre>
-<p><strong>¿Error en la autorización?</strong> <code>redirect_uri_mismatch</code>, enlace cortado, navegador en otra máquina: el <a href="https://github.com/linnoff88-dev/yt-pubx/blob/main/docs/autorizar-canal.es.md">paso a paso sin términos técnicos</a> muestra cada error de Google y la salida. Si la página final da error de conexión, copia la URL de la barra y pégala en la terminal del <code>auth</code>.</p>
+<p><strong>¿Error en la autorización?</strong> <code>redirect_uri_mismatch</code>, enlace cortado, navegador en otra máquina: el <a href="https://github.com/linnoff88-dev/arckhe-yt-pubx/blob/main/docs/autorizar-canal.es.md">paso a paso sin términos técnicos</a> muestra cada error de Google y la salida. Si la página final da error de conexión, copia la URL de la barra y pégala en la terminal del <code>auth</code>.</p>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
@@ -233,13 +234,13 @@
     <p>El <code>--dry-run</code> genera título, descripción, etiquetas y miniatura y muestra todo sin publicar. Abre la <code>thumb.jpg</code> de la carpeta indicada.</p>
 <pre><span class="k">yt-pubx publicar</span> aula.mp4 --legenda aula.srt \
   --contexto <span class="s">"Clase 3 del curso X. Página: https://exemplo.com/curso"</span> --dry-run
-<span class="c"># PLANO: ~/.local/share/yt-pubx/trabalhos/20261007-163325-aula-mp4/plano.json</span></pre>
+<span class="c"># PLANO: ~/.local/share/arckhe-yt-pubx/trabalhos/20261007-163325-aula-mp4/plano.json</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Publica lo que revisaste</h3>
     <p>El <code>--plano</code> reutiliza el texto y el arte, sin generarlos de nuevo. Puedes cambiar solo la frase de la miniatura. Al final aparecen el enlace del video y el de Studio.</p>
-<pre><span class="k">yt-pubx publicar</span> aula.mp4 --plano ~/.local/share/yt-pubx/trabalhos/<span class="s">&lt;carpeta&gt;</span>/plano.json \
+<pre><span class="k">yt-pubx publicar</span> aula.mp4 --plano ~/.local/share/arckhe-yt-pubx/trabalhos/<span class="s">&lt;carpeta&gt;</span>/plano.json \
   --frase-thumb <span class="s">"De cero al aire"</span>
 <span class="c"># URL: https://www.youtube.com/watch?v=...</span></pre>
   </div></div>

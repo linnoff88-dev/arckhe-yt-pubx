@@ -47,7 +47,7 @@ yt-pubx publicar aula.mp4 --contexto "Lesson 3 of course X. Page: https://..." -
 git clone https://github.com/linnoff88-dev/yt-pubx.git
 cd yt-pubx
 ln -s "$PWD/yt-pubx" ~/.local/bin/yt-pubx   # optional: call it from any folder
-yt-pubx init                                 # creates ~/.config/yt-pubx/config.json
+yt-pubx init                                 # creates ~/.config/arckhe-yt-pubx/config.json
 ```
 
 ## 3. Enable YouTube in Google Cloud (once)
@@ -79,7 +79,7 @@ yt-pubx init                                 # creates ~/.config/yt-pubx/config.
 
 ## 4. Configure the channel
 
-Edit `~/.config/yt-pubx/config.json`:
+Edit `~/.config/arckhe-yt-pubx/config.json`:
 
 ```json
 {
@@ -128,9 +128,9 @@ yt-pubx canais
 
 Browser on another machine (server, remote desktop)? After **Allow** the page shows a connection error:
 copy the URL from the address bar, paste it into the `yt-pubx auth` terminal and press Enter.
-The authorization link is also saved to `~/.config/yt-pubx/auth-<channel>.txt`, so you can copy it unbroken.
+The authorization link is also saved to `~/.config/arckhe-yt-pubx/auth-<channel>.txt`, so you can copy it unbroken.
 
-The token is stored in `~/.config/yt-pubx/tokens/principal.json` (permission 600). For more channels,
+The token is stored in `~/.config/arckhe-yt-pubx/tokens/principal.json` (permission 600). For more channels,
 repeat: one block in `canais` + one `yt-pubx auth <name>`. The same `client_secret` works for
 all channels; each `auth` is done signed in to the account that owns that channel (or by choosing the brand
 channel on the Google screen).
@@ -146,7 +146,7 @@ channel on the Google screen).
 yt-pubx publicar video.mp4 --contexto "What the video is about + official links" --dry-run
 
 # like it? publish exactly what you saw (without generating new art)
-yt-pubx publicar video.mp4 --plano ~/.local/share/yt-pubx/trabalhos/<folder>/plano.json
+yt-pubx publicar video.mp4 --plano ~/.local/share/arckhe-yt-pubx/trabalhos/<folder>/plano.json
 
 # change only the thumbnail phrase
 yt-pubx publicar video.mp4 --plano .../plano.json --frase-thumb "From zero to live"
@@ -173,8 +173,8 @@ yt-pubx publicar video.mp4 --title "..." --description "..." --tags "a,b,c" --th
 A short vertical video (up to 3 min) automatically becomes a **Short**; add `#Shorts` to the title if you want
 to make it explicit.
 
-**Outputs:** `~/.local/share/yt-pubx/trabalhos/<date>-<name>/` (plano.json, thumb.jpg, thumb_arte.png)
-and `~/.local/share/yt-pubx/historico.jsonl` (one line per publication).
+**Outputs:** `~/.local/share/arckhe-yt-pubx/trabalhos/<date>-<name>/` (plano.json, thumb.jpg, thumb_arte.png)
+and `~/.local/share/arckhe-yt-pubx/historico.jsonl` (one line per publication).
 
 **Edit a video that is already published** (title, description or tags; everything else stays as is):
 
@@ -199,7 +199,7 @@ one thumbnail phrase swap and three publications with thumbnails in under 5 minu
 | Message | Cause / fix |
 |---|---|
 | `redirect_uri_mismatch` | "Web application" client without the local address registered → [docs/autorizar-canal.en.md](docs/autorizar-canal.en.md) |
-| `single value: access_type` | link copied broken from the terminal → open it from `~/.config/yt-pubx/auth-<channel>.txt` |
+| `single value: access_type` | link copied broken from the terminal → open it from `~/.config/arckhe-yt-pubx/auth-<channel>.txt` |
 | connection error on `localhost` after Allow | browser on another machine → paste the address-bar URL into the `auth` terminal |
 | `token OAuth recusado` | expired token (app in Testing mode: 7 days) → `yt-pubx auth <channel>` |
 | `thumb não aplicada … verify` | channel without phone verification |

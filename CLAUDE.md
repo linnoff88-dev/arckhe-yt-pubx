@@ -1,8 +1,8 @@
 # CLAUDE.md — yt-pubx
 
 Ferramenta de linha de comando que publica vídeo direto no YouTube (texto e thumb pelo Codex).
-Um arquivo só: `yt-pubx` (Python). Config do usuário em `~/.config/yt-pubx/` e dados em
-`~/.local/share/yt-pubx/`. Nada de credencial, canal ou caminho pessoal entra neste repo.
+Um arquivo só: `yt-pubx` (Python). Config do usuário em `~/.config/arckhe-yt-pubx/` e dados em
+`~/.local/share/arckhe-yt-pubx/`. Nada de credencial, canal ou caminho pessoal entra neste repo.
 
 Quando pedirem "publica esse vídeo (no canal X)":
 

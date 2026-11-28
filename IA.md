@@ -1,6 +1,6 @@
 # Tipo, motor, modelo e esforço por etapa
 
-Configuração ativa: `~/.config/yt-pubx/ia.yaml`. Exemplo portátil sem credenciais no repo: `ia.exemplo.yaml`. Metadados podem usar assinatura Claude/Codex ou APIs Anthropic/OpenAI/OpenRouter autorizadas; todas as APIs começam desativadas. Capa exige Codex/image_gen por assinatura. Sem fallback pago. A configuração antiga codex_modelo foi substituída pela seleção explícita de cada etapa no novo arquivo.
+Configuração ativa: `~/.config/arckhe-yt-pubx/ia.yaml`. Exemplo portátil sem credenciais no repo: `ia.exemplo.yaml`. Metadados podem usar assinatura Claude/Codex ou APIs Anthropic/OpenAI/OpenRouter autorizadas; todas as APIs começam desativadas. Capa exige Codex/image_gen por assinatura. Sem fallback pago. A configuração antiga codex_modelo foi substituída pela seleção explícita de cada etapa no novo arquivo.
 
 ```bash
 python3 ia_motor.py ver

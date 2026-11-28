@@ -24,7 +24,7 @@
 ## 2.3.0 — 2026-10-10
 - `yt-pubx auth` aceita client **Aplicativo da Web**: usa o endereço local cadastrado no JSON, ou `--redirect`.
 - Navegador em outra máquina: cole no terminal a URL final (com `code=`) e a autorização termina.
-- O link de autorização fica também em `~/.config/yt-pubx/auth-<canal>.txt` (copiar sem quebra de linha); espera 30 min.
+- O link de autorização fica também em `~/.config/arckhe-yt-pubx/auth-<canal>.txt` (copiar sem quebra de linha); espera 30 min.
 - Novo guia leigo [docs/autorizar-canal.md](docs/autorizar-canal.md) com os erros reais do Google e a saída de cada um.
 
 ## 2.2.0 — 2026-10-08
@@ -35,7 +35,7 @@
 - `yt-pubx atualizar <id|URL>`: edita título, descrição ou tags de um vídeo já publicado.
 
 ## 2.0.0 — 2026-10-07
-- Ferramenta independente: config em `~/.config/yt-pubx/config.json`, canais ilimitados.
+- Ferramenta independente: config em `~/.config/arckhe-yt-pubx/config.json`, canais ilimitados.
 - `yt-pubx init` e `yt-pubx auth` (OAuth "App para computador" com PKCE, escopos de upload, gerência e legendas).
 - `credenciais_cmd` por canal para quem já guarda as credenciais em outro lugar.
 - Compositor de thumb próprio (frase, marca e cores por canal).
